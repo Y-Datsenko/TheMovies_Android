@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
             TheMoviesTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+                    MovieItem(movies.first())
                 }
             }
         }
@@ -25,14 +25,14 @@ class MainActivity : AppCompatActivity() {
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = name)
+fun MovieItem(movie: Movie) {
+    Text(text = movie.title)
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     TheMoviesTheme {
-        Greeting("Android")
+        MovieItem(movies.first())
     }
 }
