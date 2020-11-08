@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
@@ -34,13 +36,19 @@ class MainActivity : AppCompatActivity() {
 
 @Composable
 fun MovieItem(movie: Movie) {
-    Box(
-        alignment = Alignment.Center,
-        modifier = Modifier
-            .size(size = 50.dp)
-            .background(color = Color.Green, shape = CircleShape)
-    ) {
-        Text(text = movie.firstLetter)
+    Row {
+        Box(
+            alignment = Alignment.Center,
+            modifier = Modifier
+                .size(size = 50.dp)
+                .background(color = Color.Green, shape = CircleShape)
+        ) {
+            Text(text = movie.firstLetter)
+        }
+        Column {
+            Text(text = movie.title)
+            Text(text = movie.description)
+        }
     }
 }
 
