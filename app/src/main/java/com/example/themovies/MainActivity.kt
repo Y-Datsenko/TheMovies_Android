@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
@@ -36,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
 @Composable
 fun MovieItem(movie: Movie) {
-    Row {
+    Row(verticalAlignment = Alignment.CenterVertically) {
         Box(
             alignment = Alignment.Center,
             modifier = Modifier
@@ -45,7 +46,7 @@ fun MovieItem(movie: Movie) {
         ) {
             Text(text = movie.firstLetter)
         }
-        Column {
+        Column(modifier = Modifier.padding(start = 8.dp)) {
             Text(text = movie.title)
             Text(text = movie.description)
         }
