@@ -4,14 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumnFor
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
@@ -31,7 +26,9 @@ class MainActivity : AppCompatActivity() {
             TheMoviesTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    MovieItem(movies.first())
+                    LazyColumnFor(items = movies) { movie ->
+                        MovieItem(movie)
+                    }
                 }
             }
         }
@@ -40,7 +37,10 @@ class MainActivity : AppCompatActivity() {
 
 @Composable
 fun MovieItem(movie: Movie) {
-    Row(verticalAlignment = Alignment.CenterVertically) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
+    ) {
         Box(
             alignment = Alignment.Center,
             modifier = Modifier
