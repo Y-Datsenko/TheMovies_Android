@@ -2,13 +2,13 @@ package com.example.themovies
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.Text
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumnFor
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -42,7 +42,7 @@ fun MovieItem(movie: Movie) {
         modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
     ) {
         Box(
-            alignment = Alignment.Center,
+            contentAlignment = Alignment.Center,
             modifier = Modifier
                 .size(size = 50.dp)
                 .background(color = Color(61, 198, 94), shape = CircleShape)
