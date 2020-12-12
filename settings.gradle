@@ -1,2 +1,3 @@
 rootProject.name = "TheMovies"
 include ':app'
+include ':kmmmodule'
