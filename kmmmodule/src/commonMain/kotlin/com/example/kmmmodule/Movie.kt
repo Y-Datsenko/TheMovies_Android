@@ -1,4 +1,4 @@
-package com.example.themovies
+package com.example.kmmmodule
 
 data class Movie(
     val title: String,
@@ -8,7 +8,7 @@ data class Movie(
 
 val movies = listOf(
     Movie(
-        title = "Hamilton",
+        title = "Hamilton ${Greeting().greeting()}",
         firstLetter = "H",
         description = "The real life of one of America's foremost founding fathers and first Secretary of the Treasury, Alexander Hamilton. Captured live on Broadway from the Richard Rodgers Theater with the original Broadway cast."
     ),

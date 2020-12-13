@@ -17,6 +17,8 @@ import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
+import com.example.kmmmodule.Movie
+import com.example.kmmmodule.movies
 import com.example.themovies.ui.TheMoviesTheme
 
 class MainActivity : AppCompatActivity() {
